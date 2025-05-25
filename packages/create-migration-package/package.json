@@ -1,5 +1,5 @@
 {
-  "name": "create-migration-package",
-  "type": "module",
-  "bin": "./createPkg.js"
+	"name": "create-migration-package",
+	"type": "module",
+	"bin": "./createPkg.js"
 }

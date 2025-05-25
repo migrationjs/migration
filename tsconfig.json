@@ -1,15 +1,11 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
-  "compilerOptions": {
-    "declaration": true,
-    "outDir": "lib",
+	"extends": "@tsconfig/node20/tsconfig.json",
+	"compilerOptions": {
+		"declaration": true,
+		"outDir": "lib",
 
-    "types": ["node"]
-  },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "*.test.ts"
-  ]
+		"types": ["node"]
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["*.test.ts"]
 }

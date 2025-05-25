@@ -1,33 +1,47 @@
 {
-  "name": "migration",
-  "version": "0.1.0",
-  "type": "module",
-  "scripts": {
-    "build": "npm --if-present --workspaces build",
-    "test": "npm --if-present --workspaces test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/migrationjs/migration.git"
-  },
-  "keywords": [],
-  "author": "Jonathan Sharpe <mail@jonrshar.pe>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/migrationjs/migration/issues"
-  },
-  "homepage": "https://github.com/migrationjs/migration#readme",
-  "description": "",
-  "engines": {
-    "node": "^20.16 || >=22"
-  },
-  "funding": "https://ko-fi.com/textbook",
-  "workspaces": [
-    "packages/create-migration-package"
-  ],
-  "devDependencies": {
-    "@tsconfig/node20": "^20.1.5",
-    "@types/node": "^20.17.50",
-    "typescript": "^5.8.3"
-  }
+	"name": "migration",
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"build": "npm --if-present --workspaces build",
+		"format": "npm run lint:prettier -- --write .",
+		"lint": "npm run lint:eslint . && npm run lint:prettier -- --check .",
+		"lint:eslint": "eslint --max-warnings 0",
+		"lint:fix": "npm run lint:eslint -- --fix . && npm run lint:prettier -- --write .",
+		"lint:prettier": "prettier --ignore-unknown",
+		"test": "npm --if-present --workspaces test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/migrationjs/migration.git"
+	},
+	"keywords": [],
+	"author": "Jonathan Sharpe <mail@jonrshar.pe>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/migrationjs/migration/issues"
+	},
+	"homepage": "https://github.com/migrationjs/migration#readme",
+	"description": "",
+	"engines": {
+		"node": "^20.16 || >=22"
+	},
+	"funding": "https://ko-fi.com/textbook",
+	"prettier": {
+		"useTabs": true
+	},
+	"workspaces": [
+		"packages/create-migration-package"
+	],
+	"devDependencies": {
+		"@codeyourfuture/eslint-config-standard": "^7.0.0",
+		"@tsconfig/node20": "^20.1.5",
+		"@types/node": "^20.17.50",
+		"eslint": "^9.27.0",
+		"eslint-config-prettier": "^10.1.5",
+		"globals": "^16.1.0",
+		"prettier": "^3.5.3",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.32.1"
+	}
 }

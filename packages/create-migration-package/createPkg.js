@@ -41,7 +41,7 @@ const workspacePackage = {
 	types: "lib/index.d.ts",
 	files: ["lib/"],
 	scripts: {
-		build: "tsc --project ./tsconfig.build.json"
+		build: "tsc --project ./tsconfig.build.json",
 	},
 	publishConfig: {
 		access: "public",
@@ -52,7 +52,11 @@ const workspacePackage = {
 	),
 };
 
-await writeFile(targetFile, JSON.stringify(workspacePackage, null, 2), "utf-8");
+await writeFile(
+	targetFile,
+	JSON.stringify(workspacePackage, null, "\t"),
+	"utf-8",
+);
 await writeFile(
 	resolve(workspaceDir, "tsconfig.build.json"),
 	JSON.stringify(
@@ -67,7 +71,7 @@ await writeFile(
 			exclude: ["*.test.ts"],
 		},
 		null,
-		2,
+		"\t",
 	),
 	"utf-8",
 );
