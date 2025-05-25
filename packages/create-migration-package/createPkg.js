@@ -43,6 +43,7 @@ const workspacePackage = {
 	files: ["lib/"],
 	scripts: {
 		build: "tsc --project ./tsconfig.build.json",
+		test: "node --experimental-strip-types --test",
 	},
 	publishConfig: {
 		access: "public",

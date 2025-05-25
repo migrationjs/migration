@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"type": "module",
 	"scripts": {
-		"build": "npm --if-present --workspaces build",
+		"build": "npm --if-present --workspaces run build",
 		"format": "npm run lint:prettier -- --write .",
 		"lint": "npm run lint:eslint . && npm run lint:prettier -- --check .",
 		"lint:eslint": "eslint --max-warnings 0",
