@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { execSync } from "node:child_process";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, resolve } from "node:path";
 
 const INHERIT = [
@@ -83,4 +83,5 @@ await writeFile(
 	"export default {};",
 	"utf-8",
 );
+await cp(resolve(rootDir, "LICENSE"), resolve(workspaceDir, "LICENSE"));
 execSync("npm run format", { cwd: rootDir });
