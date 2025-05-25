@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { execSync } from "node:child_process";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, resolve } from "node:path";
 
@@ -81,3 +82,4 @@ await writeFile(
 	"export default {};",
 	"utf-8",
 );
+execSync("npm run format", { cwd: rootDir });
