@@ -4,6 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
 	title: "Migration",
 	description: "A cross-provider Node.js database migration tool.",
+	base: "/migration/",
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
