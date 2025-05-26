@@ -1,3 +1,5 @@
 node_modules/
 packages/*/lib/
+packages/docs/.vitepress/
+!packages/docs/.vitepress/config.ts
 migration-*.tgz

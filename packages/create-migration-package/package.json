@@ -1,5 +1,6 @@
 {
 	"name": "create-migration-package",
 	"type": "module",
-	"bin": "./createPkg.js"
+	"bin": "./createPkg.js",
+	"license": "UNLICENSED"
 }

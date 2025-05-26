@@ -1,0 +1,16 @@
+{
+	"name": "docs",
+	"version": "0.1.0",
+	"type": "module",
+	"devDependencies": {
+		"vitepress": "^1.6.3"
+	},
+	"scripts": {
+		"build": "vitepress build",
+		"dev": "vitepress dev",
+		"preview": "vitepress preview",
+		"prestart": "npm run build",
+		"start": "npm run preview"
+	},
+	"license": "UNLICENSED"
+}

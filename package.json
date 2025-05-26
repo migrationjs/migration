@@ -31,7 +31,8 @@
 		"useTabs": true
 	},
 	"workspaces": [
-		"packages/create-migration-package"
+		"packages/create-migration-package",
+		"packages/docs"
 	],
 	"devDependencies": {
 		"@codeyourfuture/eslint-config-standard": "^7.0.0",

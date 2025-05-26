@@ -1,0 +1,36 @@
+name: Vitepress documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/docs/**
+      - .github/workflows/docs.yml
+      - package*.json
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: textbook/take-action@nodejs
+        with:
+          node-version: 22
+      - run: npm --workspace docs run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: packages/docs/.vitepress/dist
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: [ build ]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
